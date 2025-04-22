@@ -8,7 +8,6 @@ import requests
 from sklearn.linear_model import LinearRegression
 from statsmodels.tsa.seasonal import seasonal_decompose
 import warnings
-from fluvio_streaming.consumer import start_fluvio_consumer, live_prices
 warnings.filterwarnings('ignore')
 
 # Placeholder for Grok API key (replace with actual key)
@@ -423,14 +422,6 @@ def additional_operations_menu(ticker, market_data):
 def main():
     """Main function for menu-driven stock analysis."""
     # Fetch market data for beta calculation
-    start_fluvio_consumer()
-    time.sleep(5)  # Wait for Fluvio consumer to start
-    print("Fetching market data...")
-    market_stock, market_data = fetch_stock_data("^NSEI", period="1y", interval="1d")
-    if market_data is None:
-        print("Error fetching market data. Exiting.")
-        return  
-
     _, market_data = fetch_stock_data("^GSPC")
     if market_data is None:
         print("Error fetching market data. Exiting.")
