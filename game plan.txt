@@ -1,0 +1,32 @@
+stock-market-voice-assistant/
+│
+├── main.py                      # Entry point for CLI or orchestration
+├── config.py                    # API keys, constants, ticker lists
+│
+├── fluvio_streaming/
+│   ├── producer.py              # Fluvio producer: publishes real-time stock data
+│   └── consumer.py              # Fluvio consumer: listens and feeds updates
+│
+├── analysis/
+│   ├── indicators.py            # MA, EMA, RSI, Bollinger, etc.
+│   ├── sentiment.py             # VADER + Groq sentiment
+│   ├── comparison.py            # ROI, correlation, risk, etc.
+│   └── forecast.py              # Regression, time series
+│
+├── voice/
+│   ├── speech_to_text.py        # SpeechRecognition / Whisper
+│   ├── text_to_speech.py        # pyttsx3 or ElevenLabs wrapper
+│   └── voice_loop.py            # Conversation loop logic
+│
+├── utils/
+│   ├── fetch.py                 # fetch_stock_data, fetch_news
+│   └── validate.py              # Ticker mapping, lookup, normalization
+│
+├── backend/
+│   └── api.py                   # FastAPI app (REST endpoints for stock analysis)
+│
+├── frontend/
+│   ├── streamlit_app.py         # Streamlit dashboard interface
+│   └── components/              # Optional: reusable Streamlit UI blocks
+│
+└── requirements.txt             # All dependencies for setup
