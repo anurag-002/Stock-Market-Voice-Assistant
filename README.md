@@ -2,7 +2,7 @@
 
 # 🚀 Project Title
 
-> A one-line tagline or mission statement for your project.
+> Stock Market Voice Assistant
 
 ---
 
